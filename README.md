@@ -2,48 +2,47 @@
   <img src="docs/icon.png" alt="App Icon" width="100" />
   <h1>Weishu · 𣻷澍</h1>
 
-A native Android LLM chat client that works with multiple providers 🤖💬
+原生 Android 多供应商 LLM 聊天客户端 🤖💬
 
-English | [简体中文](README_ZH_CN.md) | [繁體中文](README_ZH_TW.md)
+> 「𣻷澍」这个名字来自一个人的名字。
+
+[English](README_EN.md) | 简体中文 | [繁體中文](README_ZH_TW.md)
 </div>
 
-## ✨ Features
+## ✨ 功能
 
-- 🎨 Material You design and 🌙 dark mode
-- 🔄 Multiple AI providers: bring your own API key, URL and models (any OpenAI, Google
-  or Anthropic compatible endpoint)
-- 🖼️ Multimodal input (image, text document, PDF, DOCX)
-- 🌐 Read a web page: give the model a URL and it opens the page and reads its content,
-  without needing a search service
-- 🛠️ MCP support
-- 📝 Markdown rendering with code highlighting, LaTeX formulas, tables and Mermaid
-- 🪾 Message branching
-- 🔍 Search capabilities (Exa, Tavily, Zhipu, LinkUp, Brave, Perplexity, etc.)
-- 🧩 Prompt variables (model name, time, etc.)
-- 🤳 QR code export and import for providers
-- 🧠 ChatGPT-like memory
-- 📝 AI translation
-- 🌐 Custom HTTP request headers and request bodies
-- 💌 Silly Tavern character card import
+- 🎨 Material You 设计，🌙 深色模式
+- 🔄 多 AI 供应商：自带 API Key、地址与模型（兼容 OpenAI / Google / Anthropic 接口）
+- 🖼️ 多模态输入（图片、文本文档、PDF、DOCX）
+- 🌐 网页阅读：把网址交给模型，它会直接打开并读取页面内容，无需搜索服务
+- 🛠️ MCP 支持
+- 📝 Markdown 渲染，含代码高亮、LaTeX 公式、表格与 Mermaid
+- 🪾 消息分支
+- 🔍 搜索能力（Exa、Tavily、智谱、LinkUp、Brave、Perplexity 等）
+- 🧩 提示词变量（模型名、时间等）
+- 🤳 供应商二维码导入导出
+- 🧠 类 ChatGPT 的记忆功能
+- 📝 AI 翻译
+- 🌐 自定义 HTTP 请求头与请求体
+- 💌 Silly Tavern 角色卡导入
 
-## 🚀 Build
+## 🚀 构建
 
-Requirements:
+环境要求：
 
-- Android Studio (or the Android SDK command line tools)
-- JDK 17 or newer
-- Android SDK with platform 37 and build-tools 36
+- Android Studio（或 Android SDK 命令行工具）
+- JDK 17 及以上
+- Android SDK：platform 37、build-tools 36
 
-The Firestore / Firebase integration of the upstream project has been removed in this
-fork, so **no `google-services.json` is required** to build.
+本 fork 已移除上游的 Firebase 集成，**无需 `google-services.json` 即可构建**。
 
-Create a `local.properties` at the repository root pointing at your SDK:
+在仓库根目录创建 `local.properties`，指向你的 SDK：
 
 ```properties
 sdk.dir=/path/to/AndroidSDK
 ```
 
-Then build:
+然后构建：
 
 ```bash
 # Linux / macOS
@@ -53,38 +52,35 @@ Then build:
 gradlew.bat :app:assembleDebug
 ```
 
-Output APKs are written to `app/build/outputs/apk/debug/`.
+产物位于 `app/build/outputs/apk/debug/`。
 
-## 🧱 Project structure
+## 🧱 模块结构
 
-| Module | Responsibility |
+| 模块 | 职责 |
 |---|---|
-| `app` | Android application, UI and feature wiring |
-| `ai` | Provider abstraction (OpenAI / Google / Anthropic) and streaming |
-| `search` | Web search service integrations |
-| `speech` | TTS / ASR |
-| `document` | Document parsing |
-| `highlight` | Code highlighting |
-| `material3` | Material 3 theming helpers |
-| `workspace` | proot-based Linux workspace |
-| `oauth` | OAuth loopback helper |
-| `videogen` | Video generation |
-| `web`, `web-ui` | Local web UI assets |
-| `common` | Shared utilities |
+| `app` | Android 应用主体、界面与装配 |
+| `ai` | 供应商抽象（OpenAI / Google / Anthropic）与流式处理 |
+| `search` | 联网搜索服务集成 |
+| `speech` | 语音合成 / 识别 |
+| `document` | 文档解析 |
+| `highlight` | 代码高亮 |
+| `material3` | Material 3 主题辅助 |
+| `workspace` | 基于 proot 的 Linux 工作区 |
+| `oauth` | OAuth 回环回调辅助 |
+| `videogen` | 视频生成 |
+| `web`、`web-ui` | 本地 Web UI 资源 |
+| `common` | 公共工具 |
 
-## 📄 License
+## 📄 许可协议
 
-This project is licensed under the [GNU Affero General Public License v3.0](LICENSE)
-(AGPL-3.0).
+本项目采用 [GNU Affero 通用公共许可证第三版](LICENSE)（AGPL-3.0）授权。
 
-Source code: <https://github.com/ChuxueTeam/Weishu>
+源码仓库：<https://github.com/ChuxueTeam/Weishu>
 
-## 🙏 Attribution
+## 🙏 致谢与来源
 
-Weishu is a modified fork of [RikkaHub](https://github.com/rikkahub/rikkahub), which is
-also licensed under AGPL-3.0. The original copyright notices are retained. See
-[NOTICE](NOTICE) for the list of modifications.
+Weishu 是 [RikkaHub](https://github.com/rikkahub/rikkahub) 的修改版分支，上游同样以
+AGPL-3.0 授权。原始版权声明予以保留，改动清单见 [NOTICE](NOTICE)。
 
-This fork is an independent derivative work. It is not affiliated with, endorsed by, or
-supported by the RikkaHub project, and it claims no rights to the "RikkaHub" name or
-logo.
+本分支为独立衍生作品，与 RikkaHub 项目无从属关系，未获其背书或支持，也不主张对
+"RikkaHub" 名称或标志的任何权利。

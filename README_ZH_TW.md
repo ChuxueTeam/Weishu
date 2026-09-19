@@ -4,7 +4,9 @@
 
 原生 Android 多供應商 LLM 聊天客戶端 🤖💬
 
-[English](README.md) | [简体中文](README_ZH_CN.md) | 繁體中文
+> 「𣻷澍」這個名字來自一個人的名字。
+
+[English](README_EN.md) | [简体中文](README.md) | 繁體中文
 </div>
 
 ## ✨ 功能
