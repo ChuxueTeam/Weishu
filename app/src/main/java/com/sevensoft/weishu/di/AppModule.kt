@@ -1,0 +1,105 @@
+package com.sevensoft.weishu.di
+
+import kotlinx.serialization.json.Json
+import com.sevensoft.weishu.AppScope
+import com.sevensoft.weishu.data.ai.tools.local.LocalTools
+import com.sevensoft.weishu.data.ai.tools.ChatToolFactory
+import com.sevensoft.weishu.data.event.AppEventBus
+import com.sevensoft.weishu.service.ChatNotificationManager
+import com.sevensoft.weishu.service.ChatService
+import com.sevensoft.weishu.ui.pages.extensions.workspace.WorkspaceTerminalSessionManager
+import com.sevensoft.weishu.utils.EmojiData
+import com.sevensoft.weishu.utils.EmojiUtils
+import com.sevensoft.weishu.utils.JsonInstant
+import com.sevensoft.weishu.utils.SoundEffectPlayer
+import com.sevensoft.weishu.web.WebServerManager
+import com.sevensoft.weishu.tts.provider.TTSManager
+import org.koin.dsl.module
+
+val appModule = module {
+    single<Json> { JsonInstant }
+
+    single {
+        AppEventBus()
+    }
+
+    single {
+        LocalTools(get(), get(), get(), get())
+    }
+
+    single {
+        AppScope()
+    }
+
+    single<EmojiData> {
+        EmojiUtils.loadEmoji(get())
+    }
+
+    single {
+        TTSManager(get())
+    }
+
+    single {
+        SoundEffectPlayer(get())
+    }
+
+    single {
+        WorkspaceTerminalSessionManager(get(), get())
+    }
+
+    // 生成通知与业务解耦：ChatService 只发事件，通知由这里消费；
+    // createdAtStart 保证进程启动即订阅，否则后台生成的事件会因无订阅者而丢失
+    single(createdAtStart = true) {
+        ChatNotificationManager(
+            context = get(),
+            appScope = get(),
+            eventBus = get(),
+            settingsStore = get(),
+        )
+    }
+
+    single {
+        ChatToolFactory(
+            json = get(),
+            okHttpClient = get(),
+            memoryRepository = get(),
+            conversationRepository = get(),
+            localTools = get(),
+            mcpManager = get(),
+            skillManager = get(),
+            workspaceRepository = get(),
+        )
+    }
+
+    single {
+        ChatService(
+            context = get(),
+            appScope = get(),
+            appEventBus = get(),
+            settingsStore = get(),
+            conversationRepo = get(),
+            memoryRepository = get(),
+            generationLoop = get(),
+            translationHandler = get(),
+            templateTransformer = get(),
+            providerManager = get(),
+            chatToolFactory = get(),
+            mcpManager = get(),
+            filesManager = get(),
+            workspaceRepository = get(),
+            folderRepository = get()
+        )
+    }
+
+    single {
+        WebServerManager(
+            context = get(),
+            appScope = get(),
+            chatService = get(),
+            conversationRepo = get(),
+            folderRepo = get(),
+            settingsStore = get(),
+            filesManager = get()
+        )
+    }
+}

@@ -1,12 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("rikkahub.android.library.compose")
+    id("weishu.android.library.compose")
     alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "me.rerere.ai"
+    namespace = "com.sevensoft.weishu.ai"
 
     defaultConfig {
 //        externalNativeBuild {

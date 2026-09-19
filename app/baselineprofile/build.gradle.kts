@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "me.rerere.baselineprofile"
+    namespace = "com.sevensoft.weishu.baselineprofile"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1

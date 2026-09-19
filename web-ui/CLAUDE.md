@@ -4,7 +4,7 @@ This file provides guidance to AI agents when working with code in this reposito
 
 ## Project Overview
 
-web-ui 是 RikkaHub 项目的嵌入式 Web 前端，基于 React Router 7 的单页应用（SPA）。构建产物通过 `copy.ts` 脚本复制到 `../web/src/main/resources/static` 目录，由 Kotlin 后端的 Ktor 服务器提供静态文件服务。
+web-ui 是 Weishu 项目的嵌入式 Web 前端，基于 React Router 7 的单页应用（SPA）。构建产物通过 `copy.ts` 脚本复制到 `../web/src/main/resources/static` 目录，由 Kotlin 后端的 Ktor 服务器提供静态文件服务。
 
 ## Technology Stack
 
@@ -129,14 +129,14 @@ app/
 
 | TypeScript 类型 | Kotlin 类型 | 后端位置 |
 |----------------|------------|---------|
-| `MessageRole` | `MessageRole` | `ai/src/main/java/me/rerere/ai/core/MessageRole.kt` |
-| `TokenUsage` | `Usage` | `ai/src/main/java/me/rerere/ai/core/Usage.kt` |
-| `UIMessagePart` | `UIMessagePart` | `ai/src/main/java/me/rerere/ai/ui/Message.kt` |
-| `UIMessage` | `UIMessage` | `ai/src/main/java/me/rerere/ai/ui/Message.kt` |
-| `MessageNode` | `MessageNode` | `app/src/main/java/me/rerere/rikkahub/data/model/Conversation.kt` |
-| `Conversation` | `Conversation` | `app/src/main/java/me/rerere/rikkahub/data/model/Conversation.kt` |
-| `ConversationDto` | `ConversationDto` | `app/src/main/java/me/rerere/rikkahub/web/dto/WebDto.kt` |
-| `Settings` | `Settings` | `app/src/main/java/me/rerere/rikkahub/data/datastore/PreferencesStore.kt` |
+| `MessageRole` | `MessageRole` | `ai/src/main/java/com/sevensoft/weishu/ai/core/MessageRole.kt` |
+| `TokenUsage` | `Usage` | `ai/src/main/java/com/sevensoft/weishu/ai/core/Usage.kt` |
+| `UIMessagePart` | `UIMessagePart` | `ai/src/main/java/com/sevensoft/weishu/ai/ui/Message.kt` |
+| `UIMessage` | `UIMessage` | `ai/src/main/java/com/sevensoft/weishu/ai/ui/Message.kt` |
+| `MessageNode` | `MessageNode` | `app/src/main/java/com/sevensoft/weishu/data/model/Conversation.kt` |
+| `Conversation` | `Conversation` | `app/src/main/java/com/sevensoft/weishu/data/model/Conversation.kt` |
+| `ConversationDto` | `ConversationDto` | `app/src/main/java/com/sevensoft/weishu/web/dto/WebDto.kt` |
+| `Settings` | `Settings` | `app/src/main/java/com/sevensoft/weishu/data/datastore/PreferencesStore.kt` |
 
 **类型更新时需同步修改前后端！**
 

@@ -1,9 +1,9 @@
 plugins {
-    id("rikkahub.android.library")
+    id("weishu.android.library")
 }
 
 android {
-    namespace = "me.rerere.document"
+    namespace = "com.sevensoft.weishu.document"
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")

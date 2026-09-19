@@ -1,10 +1,10 @@
 plugins {
-    id("rikkahub.android.library")
+    id("weishu.android.library")
     alias(libs.plugins.kotlin.serialization)
 }
 
 android {
-    namespace = "me.rerere.videogen"
+    namespace = "com.sevensoft.weishu.videogen"
 }
 
 dependencies {

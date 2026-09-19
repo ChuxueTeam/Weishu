@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-RikkaHub is a native Android LLM chat client that supports switching between different AI providers
+Weishu is a native Android LLM chat client that supports switching between different AI providers
 for conversations.
 Built with Jetpack Compose, Kotlin, and follows Material Design 3 principles.
 
@@ -33,22 +33,22 @@ Built with Jetpack Compose, Kotlin, and follows Material Design 3 principles.
 - **Assistant**: An assistant configuration with system prompts, model parameters, and conversation isolation. Each
   assistant maintains its own settings including temperature, context size, custom headers, tools, memory options, regex
   transformations, and prompt injections (mode/lorebook). Assistants provide isolated chat environments with specific
-  behaviors and capabilities. (app/src/main/java/me/rerere/rikkahub/data/model/Assistant.kt)
+  behaviors and capabilities. (app/src/main/java/com/sevensoft/weishu/data/model/Assistant.kt)
 
 - **Conversation**: A persistent conversation thread between the user and an assistant. Each conversation maintains a
   list of MessageNodes in a tree structure to support message branching, along with metadata like title, creation time,
   update time, pin status, chat suggestions, optional conversation-level system prompt, and prompt injection bindings. (
-  app/src/main/java/me/rerere/rikkahub/data/model/Conversation.kt)
+  app/src/main/java/com/sevensoft/weishu/data/model/Conversation.kt)
 
 - **UIMessage**: A platform-agnostic message abstraction that encapsulates chat messages with different types of content
   parts (text, images, documents, reasoning, tool calls/results, etc.). Each message has a role (USER, ASSISTANT,
   SYSTEM, TOOL), creation timestamp, model ID, token usage information, and optional annotations. UIMessages support
-  streaming updates through chunk merging. (ai/src/main/java/me/rerere/ai/ui/Message.kt)
+  streaming updates through chunk merging. (ai/src/main/java/com/sevensoft/weishu/ai/ui/Message.kt)
 
 - **MessageNode**: A container holding one or more UIMessages to implement message branching functionality. Each node
   maintains a list of alternative messages and tracks which message is currently selected (selectIndex). This enables
   users to regenerate responses and switch between different conversation branches, creating a tree-like conversation
-  structure. (app/src/main/java/me/rerere/rikkahub/data/model/Conversation.kt)
+  structure. (app/src/main/java/com/sevensoft/weishu/data/model/Conversation.kt)
 
 - **Message Transformer**: A pipeline mechanism for transforming messages before sending to AI providers (
   InputMessageTransformer) or after receiving responses (OutputMessageTransformer). Transformers can modify message
@@ -63,7 +63,7 @@ Built with Jetpack Compose, Kotlin, and follows Material Design 3 principles.
 
   Output transformers support `visualTransform()` for UI display during streaming and `onGenerationFinish()` for final
   processing after generation completes.
-  (app/src/main/java/me/rerere/rikkahub/data/ai/transformers/Transformer.kt)
+  (app/src/main/java/com/sevensoft/weishu/data/ai/transformers/Transformer.kt)
 
 ## Internationalization
 

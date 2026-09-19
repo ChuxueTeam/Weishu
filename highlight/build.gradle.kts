@@ -1,9 +1,9 @@
 plugins {
-    id("rikkahub.android.library.compose")
+    id("weishu.android.library.compose")
 }
 
 android {
-    namespace = "me.rerere.highlight"
+    namespace = "com.sevensoft.weishu.highlight"
 
     defaultConfig {
         minSdk = 24

@@ -1,0 +1,40 @@
+Weishu (𣻷澍)
+Copyright (C) 2026 SR7
+
+This program is a modified fork of RikkaHub (https://github.com/rikkahub/rikkahub),
+Copyright (C) RikkaHub contributors.
+
+It is free software: you can redistribute it and/or modify it under the terms of the
+GNU Affero General Public License as published by the Free Software Foundation,
+either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>. The full license text is
+included in the LICENSE file at the root of this repository.
+
+Modifications
+-------------
+This fork modifies RikkaHub. Modifications were made in 2026. Summary (see git
+history for the complete record):
+
+- Renamed the application to Weishu (𣻷澍) and changed the package to
+  com.sevensoft.weishu.
+- Removed Firebase Analytics / Crashlytics.
+- Removed affiliate / promotional third-party providers and the recommendation list;
+  removed the sponsor API, the donation page and the sponsor assets.
+- Removed the upstream update checker and the built-in search service that pointed at
+  upstream servers (updates.rikka-ai.com, api.rikka-ai.com, sponsors.rikka-ai.com),
+  along with in-app links to the upstream website and project.
+- Reworked settings structure and hid several settings surfaces.
+- Added a built-in tool for reading a user-provided web page.
+- Replaced the loading animation with a Material 3 loading indicator.
+- Replaced the application icon.
+
+"RikkaHub" and its logo belong to the original authors. This fork is an independent,
+unaffiliated derivative work and does not claim any trademark rights.
+
+Source code of this fork: https://github.com/ChuxueTeam/Weishu

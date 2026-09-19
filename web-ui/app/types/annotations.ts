@@ -6,6 +6,6 @@ export interface UrlCitationAnnotation {
 
 /**
  * Union type for message annotations
- * @see ai/src/main/java/me/rerere/ai/ui/Message.kt - UIMessageAnnotation
+ * @see ai/src/main/java/com/sevensoft/weishu/ai/ui/Message.kt - UIMessageAnnotation
  */
 export type UIMessageAnnotation = UrlCitationAnnotation;
